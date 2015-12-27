@@ -1,0 +1,18 @@
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<div class="row">
+	<div class="col-md-2">
+		<select id="world" class="form-control">
+			<option value="1">world</option>
+			<option value="2">lifelikeWorld</option>
+		</select>
+	</div>
+	<button id="play" class="btn btn-primary" title="play"><span class="glyphicon glyphicon-play"/></button>
+	<button id="fastForward" class="btn btn-primary" title="play"><span class="glyphicon glyphicon-forward"/></button>
+	<button id="step" class="btn btn-primary" title="step"><span class="glyphicon glyphicon-step-forward"/></button>
+	<button id="pause" class="btn btn-primary" title="pause"><span class="glyphicon glyphicon-pause"/></button>
+</div>
+<div id="grid"></div>
+<script src="./require1k.min.js" data-main="./electronicLife"></script>

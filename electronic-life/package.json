@@ -1,0 +1,34 @@
+{
+  "name": "game-of-life",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "karma start",
+    "test:watch": "karma start --auto-watch --browsers Chrome --no-single-run",
+    "lint": "jshint app"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "bootstrap": "3.3.6",
+    "jquery": "2.1.4"
+  },
+  "devDependencies": {
+    "brfs": "^1.4.0",
+    "browserify-istanbul": "^0.1.2",
+    "browserify-shim": "~3.8.0",
+    "jshint": "2.9.1-rc2",
+    "karma": "^0.13.0",
+    "karma-browserify": "^4.2.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "0.5.3",
+    "karma-coveralls": "1.1.2",
+    "karma-jasmine": "^0.1.6",
+    "karma-phantomjs-launcher": "0.1.4",
+	"karma-junit-reporter": "0.3.8"
+  },
+  "browserify-shim": {
+    "external": "global:External"
+  }
+}
