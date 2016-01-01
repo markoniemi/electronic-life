@@ -5,6 +5,7 @@ function BouncingCritter() {
   this.energy = 10;
 }
 
+// TODO randomElement is also implemented in View
 BouncingCritter.prototype.randomElement = function(array) {
   return array[Math.floor(Math.random() * array.length)];
 };

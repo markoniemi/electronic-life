@@ -26,19 +26,10 @@ DivGrid.prototype.createDiv = function(parent, x, y, char, color) {
   element.setAttribute("data-type", char);
   element.style.color = color;
   element.textContent = char;
-  // element.value = world.value;
   parent.appendChild(element);
-  // element.addEventListener("click", function() {
-  // var x = this.getAttribute('data-x');
-  // var y = this.getAttribute('data-y');
-  // var type = this.getAttribute('data-type');
-  // // TODO how to access world in a object oriented manner?
-  // world.setValue(x, y, this.checked);
-  // });
   return element;
 };
 DivGrid.prototype.calculateNextGeneration = function() {
-  // var nextGeneration = this.world.calculateNextGeneration();
   this.world.turn();
   this.updateCheckboxes();
 };

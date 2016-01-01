@@ -1,5 +1,5 @@
 function Plant() {
-  this.energy = 3 + Math.random() * 4;
+  this.energy = this.randomEnergy();
 }
 Plant.prototype.act = function(view) {
   if (this.energy > 15) {
@@ -11,6 +11,9 @@ Plant.prototype.act = function(view) {
   if (this.energy < 20) {
     return { type : "grow" };
   }
+};
+Plant.prototype.randomEnergy = function() {
+  return 3 + Math.random() * 4;
 };
 
 module.exports = Plant;

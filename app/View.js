@@ -1,13 +1,15 @@
 var Vector = require('./Vector');
 
-function randomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
 
 function View(world, vector) {
   this.world = world;
   this.vector = vector;
 }
+
+View.prototype.randomElement = function(array) {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
 View.prototype.look = function(dir) {
   var target = this.vector.plus(Vector.directions[dir]);
   if (this.world.grid.isInside(target)) {
@@ -30,7 +32,7 @@ View.prototype.find = function(ch) {
   if (found.length === 0) {
     return null;
   }
-  return randomElement(found);
+  return this.randomElement(found);
 };
 
 module.exports = View;
