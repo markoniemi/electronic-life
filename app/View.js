@@ -10,10 +10,9 @@ function View(world, vector) {
 }
 View.prototype.look = function(dir) {
   var target = this.vector.plus(Vector.directions[dir]);
-  if (this.world.grid.isInside(target)){
+  if (this.world.grid.isInside(target)) {
     return this.world.charFromElement(this.world.grid.get(target));
-  }
-  else{
+  } else {
     return "#";
   }
 };

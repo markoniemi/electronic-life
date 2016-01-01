@@ -1,15 +1,6 @@
 var World = require('./World');
 var View = require('./View');
 
-//var elementFromChar = function(legend, ch) {
-//  if (ch === " ") {
-//    return null;
-//  }
-//  var element = new legend[ch]();
-//  element.originChar = ch;
-//  return element;
-//};
-
 function LifelikeWorld(map, legend) {
   World.call(this, map, legend);
 }

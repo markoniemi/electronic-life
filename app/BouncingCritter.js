@@ -1,13 +1,13 @@
-function randomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
 var directionNames = "n ne e se s sw w nw".split(" ");
 
 function BouncingCritter() {
-  this.direction = randomElement(directionNames);
+  this.direction = this.randomElement(directionNames);
   this.energy = 10;
 }
+
+BouncingCritter.prototype.randomElement = function(array) {
+  return array[Math.floor(Math.random() * array.length)];
+};
 
 BouncingCritter.prototype.act = function(view) {
   var plant = view.find("*");
