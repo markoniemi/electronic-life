@@ -1,1 +1,1 @@
-{"libs":["ecma5"],"plugins":{"node":{}},"ide":{}}
+{"ecmaVersion":5,"libs":["browser","jasmine"],"ide":{}}

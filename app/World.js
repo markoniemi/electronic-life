@@ -14,10 +14,10 @@ function World(map, legend) {
     }
   }, this);
 }
-World.prototype.getWidth = function(element) {
+World.prototype.getWidth = function() {
   return this.grid.width;
 };
-World.prototype.getHeight = function(element) {
+World.prototype.getHeight = function() {
   return this.grid.height;
 };
 

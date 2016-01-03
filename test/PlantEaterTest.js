@@ -14,19 +14,19 @@ describe('PlantEater', function() {
     });
     // mock randomEnergy for testing
     sinon.stub(Plant.prototype, 'randomEnergy', function() {
-      return 13;
+      return 15;
     });
   });
-  
+
   afterEach(function() {
     View.prototype.randomElement.restore();
     Plant.prototype.randomEnergy.restore();
   });
-  
+
   describe('act', function() {
     it('move', function() {
-      this.world = new LifelikeWorld([ "e  " ], {
-        "e" : PlantEater
+      this.world = new LifelikeWorld(["e  "], {
+        "e": PlantEater
       });
       var critter = this.world.grid.get(new Vector(0, 0));
       expect(critter.energy).toEqual(20);
@@ -34,23 +34,40 @@ describe('PlantEater', function() {
       testNextTurn(this.world, 2, 0, 18);
     });
     it('eat', function() {
-      this.world = new LifelikeWorld([ "e  ", "  *" ], {
-        "e" : PlantEater,
-        "*" : Plant
+      this.world = new LifelikeWorld(["e  ", "  *"], {
+        "e": PlantEater,
+        "*": Plant
       });
       var critter = this.world.grid.get(new Vector(0, 0));
       expect(critter.energy).toEqual(20);
       testNextTurn(this.world, 1, 0, 19);
       // critter stops to eat
-      testNextTurn(this.world, 1, 0, 32.5);
-      testNextTurn(this.world, 2, 0, 31.5);
+      testNextTurn(this.world, 1, 0, 34.5);
+      testNextTurn(this.world, 2, 0, 33.5);
+    });
+    it('reproduce', function() {
+      this.world = new LifelikeWorld(["e**", "***"], {
+        "e": PlantEater,
+        "*": Plant
+      });
+      var critter = this.world.grid.get(new Vector(0, 0));
+      expect(critter.energy).toEqual(20);
+      testNextTurn(this.world, 0, 0, 35);
+      // critter stops to eat
+      testNextTurn(this.world, 0, 0, 50.5);
+      testNextTurn(this.world, 0, 0, 65.8);
+      this.world.turn();
+      critter = this.world.grid.get(new Vector(0, 0));
+      expect(critter.energy < 30).toBe(true);
+      var baby = this.world.grid.get(new Vector(1, 0));
+      expect(baby.energy).toEqual(35.1);
     });
   });
 });
 
 function testNextTurn(world, x, y, energy) {
   world.turn();
-//  console.log(world.toString());
+  // console.log(world.toString());
   critter = world.grid.get(new Vector(x, y));
   expect(critter.energy).toEqual(energy);
 }
