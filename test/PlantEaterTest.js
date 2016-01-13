@@ -1,3 +1,4 @@
+var Critter = require('../app/Critter');
 var PlantEater = require('../app/PlantEater');
 var World = require('../app/World');
 var LifelikeWorld = require('../app/LifelikeWorld');

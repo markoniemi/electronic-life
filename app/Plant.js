@@ -1,6 +1,10 @@
+var Critter = require('./Critter');
+
 function Plant() {
-  this.energy = this.randomEnergy();
+  Critter.call(this, this.randomEnergy());
 }
+Plant.prototype = Object.create(Critter.prototype);
+
 Plant.prototype.act = function(view) {
   if (this.energy > 15) {
     var space = view.find(" ");

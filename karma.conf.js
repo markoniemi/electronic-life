@@ -18,6 +18,7 @@ module.exports = function(karma) {
 		browserify : {
 			debug : true,
 			transform : [ 'brfs', 'browserify-shim', 'browserify-istanbul' ]
+			// transform : [ 'brfs', 'browserify-shim' ]
 		},
     junitReporter : {
       outputDir : 'reports/test',

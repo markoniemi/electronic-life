@@ -1,3 +1,4 @@
+var Critter = require('../app/Critter');
 var WallFollower = require('../app/WallFollower');
 var World = require('../app/World');
 var LifelikeWorld = require('../app/LifelikeWorld');

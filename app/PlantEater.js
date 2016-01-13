@@ -1,6 +1,10 @@
+var Critter = require('./Critter');
+
 function PlantEater() {
-  this.energy = 20;
+  Critter.call(this, 20);
 }
+PlantEater.prototype = Object.create(Critter.prototype);
+
 PlantEater.prototype.act = function(view) {
   var space = view.find(" ");
   if (this.energy > 60 && space){

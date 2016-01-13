@@ -1,3 +1,4 @@
+var Critter = require('../app/Critter');
 var BouncingCritter = require('../app/BouncingCritter');
 var World = require('../app/World');
 var LifelikeWorld = require('../app/LifelikeWorld');
@@ -40,7 +41,7 @@ describe('BouncingCritter', function() {
 });
 function testNextTurn(world, x, y, direction) {
   world.turn();
-//  console.log(world.toString());
+ // console.log(world.toString());
   critter = world.grid.get(new Vector(x, y));
   expect(critter.direction).toEqual(direction);
 }

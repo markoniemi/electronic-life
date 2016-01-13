@@ -1,9 +1,13 @@
+var Critter = require('./Critter');
+
 var directionNames = "n ne e se s sw w nw".split(" ");
 
 function BouncingCritter() {
+  Critter.call(this, 10);
   this.direction = this.randomElement(directionNames);
-  this.energy = 10;
 }
+
+BouncingCritter.prototype = Object.create(Critter.prototype);
 
 // TODO randomElement is also implemented in View
 BouncingCritter.prototype.randomElement = function(array) {

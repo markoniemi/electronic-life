@@ -1,10 +1,14 @@
+var Critter = require('./Critter');
+
 // TODO move to View
 var directionNames = "n ne e se s sw w nw".split(" ");
 
 function WallFollower() {
+  Critter.call(this, 10);
   this.direction = "e";
-  this.energy = 10;
 }
+
+WallFollower.prototype = Object.create(Critter.prototype);
 
 WallFollower.prototype.act = function(view) {
   var start = this.direction;
