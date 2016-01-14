@@ -1,5 +1,5 @@
 var Critter = require('./Critter');
-var _ = require('underscore');
+var _ = require('underscore/underscore');
 
 var directionNames = "n ne e se s sw w nw".split(" ");
 
@@ -11,6 +11,10 @@ function BouncingCritter() {
 BouncingCritter.prototype = Object.create(Critter.prototype);
 
 BouncingCritter.prototype.act = function(view) {
+  var space = view.find(" ");
+  if (this.energy > 60 && space){
+    return {type: "reproduce", direction: space};
+  }
   var plant = view.find("*");
   if (plant){
     return {type: "eat", direction: plant};
