@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var Critter = require('../app/Critter');
 var PlantEater = require('../app/PlantEater');
 var World = require('../app/World');
@@ -9,9 +10,9 @@ var View = require('../app/View');
 
 describe('PlantEater', function() {
   beforeEach(function() {
-    // mock randomElement for testing
-    sinon.stub(View.prototype, 'randomElement', function(array) {
-      return array[0];
+    // mock _.sample for testing
+    sinon.stub(_, 'sample', function(obj, n, guard) {
+      return obj[0];
     });
     // mock randomEnergy for testing
     sinon.stub(Plant.prototype, 'randomEnergy', function() {
@@ -20,7 +21,7 @@ describe('PlantEater', function() {
   });
 
   afterEach(function() {
-    View.prototype.randomElement.restore();
+    _.sample.restore();
     Plant.prototype.randomEnergy.restore();
   });
 

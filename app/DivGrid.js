@@ -31,18 +31,17 @@ DivGrid.prototype.createDiv = function(parent, x, y, char, color) {
 };
 DivGrid.prototype.calculateNextGeneration = function() {
   this.world.turn();
-  this.updateCheckboxes();
+  this.updateDivs();
 };
-DivGrid.prototype.updateCheckboxes = function() {
+DivGrid.prototype.updateDivs = function() {
   var gridElement = document.querySelector("#grid");
   var tableRows = gridElement.querySelectorAll("tr");
   for (var row = 0; row < tableRows.length; row++) {
-    // TODO rename checkbox to div
-    var checkboxes = tableRows[row].querySelectorAll("div");
-    for (var column = 0; column < checkboxes.length; column++) {
-      var checkbox = checkboxes[column];
-      checkbox.textContent = this.world.getCharAt(column, row);
-      checkbox.style.color = this.world.getColorAt(column, row);
+    var divs = tableRows[row].querySelectorAll("div");
+    for (var column = 0; column < divs.length; column++) {
+      var div = divs[column];
+      div.textContent = this.world.getCharAt(column, row);
+      div.style.color = this.world.getColorAt(column, row);
     }
   }
 };

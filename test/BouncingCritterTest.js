@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var Critter = require('../app/Critter');
 var BouncingCritter = require('../app/BouncingCritter');
 var World = require('../app/World');
@@ -7,14 +8,18 @@ var Plant = require('../app/Plant');
 var Vector = require('../app/Vector');
 var View = require('../app/View');
 
-// mock randomElement for testing
-BouncingCritter.prototype.randomElement = function(array) {
-  return "e";
-};
-
 describe('BouncingCritter', function() {
   beforeEach(function() {
+    // mock _.sample for testing
+    sinon.stub(_, 'sample', function(obj, n, guard) {
+      return obj[0];
+    });
   });
+
+  afterEach(function() {
+    _.sample.restore();
+  });
+
   describe('act', function() {
     it('move', function() {
       this.world = new LifelikeWorld([ "o  " ], {

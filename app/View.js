@@ -1,14 +1,10 @@
 var Vector = require('./Vector');
-
+var _ = require('underscore');
 
 function View(world, vector) {
   this.world = world;
   this.vector = vector;
 }
-
-View.prototype.randomElement = function(array) {
-  return array[Math.floor(Math.random() * array.length)];
-};
 
 View.prototype.look = function(dir) {
   var target = this.vector.plus(Vector.directions[dir]);
@@ -32,7 +28,7 @@ View.prototype.find = function(ch) {
   if (found.length === 0) {
     return null;
   }
-  return this.randomElement(found);
+  return _.sample(found);
 };
 
 module.exports = View;

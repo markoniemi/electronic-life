@@ -1,18 +1,14 @@
 var Critter = require('./Critter');
+var _ = require('underscore');
 
 var directionNames = "n ne e se s sw w nw".split(" ");
 
 function BouncingCritter() {
   Critter.call(this, 10);
-  this.direction = this.randomElement(directionNames);
+  this.direction = _.sample(directionNames);
 }
 
 BouncingCritter.prototype = Object.create(Critter.prototype);
-
-// TODO randomElement is also implemented in View
-BouncingCritter.prototype.randomElement = function(array) {
-  return array[Math.floor(Math.random() * array.length)];
-};
 
 BouncingCritter.prototype.act = function(view) {
   var plant = view.find("*");
