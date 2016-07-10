@@ -56,26 +56,28 @@ var divGrid = new DivGrid(world);
 divGrid.createGrid(gridElement);
 var timerId;
 
-playButton.addEventListener("click", function() {
+playButton.addEventListener("click", () => {
   window.clearInterval(timerId);
-  timerId = window.setInterval(function() {
+  timerId = window.setInterval(() => {
     divGrid.calculateNextGeneration();
   }, 1000);
 });
-pauseButton.addEventListener("click", function() {
+pauseButton.addEventListener("click", () => {
   window.clearInterval(timerId);
 });
-fastForwardButton.addEventListener("click", function() {
+fastForwardButton.addEventListener("click", () => {
   window.clearInterval(timerId);
-  timerId = window.setInterval(function() {
+  timerId = window.setInterval(() => {
     divGrid.calculateNextGeneration();
   }, 300);
 });
-stepButton.addEventListener("click", function() {
+stepButton.addEventListener("click", () => {
+    window.clearInterval(timerId);
   divGrid.calculateNextGeneration();
 });
 
-worldSelect.addEventListener("change", function() {
+
+worldSelect.addEventListener("change", () => {
   divGrid.clearGrid();
   if (worldSelect.value === "1") {
     divGrid = new DivGrid(world);
@@ -85,4 +87,3 @@ worldSelect.addEventListener("change", function() {
     divGrid.createGrid(gridElement);
   }
 });
-
