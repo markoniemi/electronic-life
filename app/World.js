@@ -1,7 +1,7 @@
-var Grid = require('./Grid');
-var BouncingCritter = require('./BouncingCritter');
-var Vector = require('./Vector');
-var View = require('./View');
+import Grid from './Grid';
+import BouncingCritter from './BouncingCritter';
+import Vector from './Vector';
+import View from './View';
 
 function World(map, legend) {
   var grid = new Grid(map[0].length, map.length);

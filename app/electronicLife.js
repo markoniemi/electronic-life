@@ -1,12 +1,12 @@
-var DivGrid = require('./DivGrid');
-var World = require('./World');
-var LifelikeWorld = require('./LifelikeWorld');
-var Wall = require('./Wall');
-var Vector = require('./Vector');
-var BouncingCritter = require('./BouncingCritter');
-var WallFollower = require('./WallFollower');
-var Plant = require('./Plant');
-var PlantEater = require('./PlantEater');
+import DivGrid from './DivGrid';
+import World from './World';
+import LifelikeWorld from './LifelikeWorld';
+import Wall from './Wall';
+import Vector from './Vector';
+import BouncingCritter from './BouncingCritter';
+import WallFollower from './WallFollower';
+import Plant from './Plant';
+import PlantEater from './PlantEater';
 
 var world = new World([
     "############################",

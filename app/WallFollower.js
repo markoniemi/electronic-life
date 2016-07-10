@@ -1,4 +1,4 @@
-var Critter = require('./Critter');
+import Critter from './Critter';
 
 // TODO move to Vector
 var directionNames = "n ne e se s sw w nw".split(" ");

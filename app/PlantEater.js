@@ -1,4 +1,4 @@
-var Critter = require('./Critter');
+import Critter from './Critter';
 
 function PlantEater() {
   Critter.call(this, 20);

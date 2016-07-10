@@ -17,8 +17,11 @@ module.exports = function(karma) {
 		// browserify configuration
 		browserify : {
 			debug : true,
-			transform : [ 'brfs', 'browserify-shim', 'browserify-istanbul' ]
-			// transform : [ 'brfs', 'browserify-shim' ]
+			transform: [
+				'babelify', 'babelify', 'brfs', 'browserify-shim',
+				// workaround for istanbul bug
+				['browserify-istanbul', { instrumenterConfig: {embedSource: true} }]
+			]
 		},
     junitReporter : {
       outputDir : 'reports/test',

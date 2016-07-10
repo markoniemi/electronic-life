@@ -1,5 +1,5 @@
-var World = require('./World');
-var View = require('./View');
+import World from './World';
+import View from './View';
 
 function LifelikeWorld(map, legend) {
   World.call(this, map, legend);

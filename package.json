@@ -1,12 +1,13 @@
 {
   "name": "electronic-life",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "",
   "scripts": {
     "test": "karma start",
     "test:watch": "karma start --auto-watch --browsers Chrome --no-single-run",
-    "lint": "jshint app"
+    "lint": "jshint app",
+    "build": "browserify app/electronicLife.js -o build/bundle.js -t [ babelify --presets [ es2015 ] ]"
   },
   "author": "",
   "license": "",
@@ -17,8 +18,11 @@
   },
   "devDependencies": {
     "brfs": "^1.4.0",
+    "browserify": "13.0.1",
     "browserify-istanbul": "^0.1.2",
     "browserify-shim": "~3.8.0",
+    "babelify": "7.2.0",
+    "babel-preset-es2015": "6.9.0",
     "jshint": "2.9.1-rc2",
     "karma": "^0.13.0",
     "karma-browserify": "^4.2.0",
@@ -28,7 +32,8 @@
     "karma-jasmine": "^0.1.6",
     "karma-sinon": "1.0.4",
     "karma-phantomjs-launcher": "0.1.4",
-    "karma-junit-reporter": "0.3.8"
+    "karma-junit-reporter": "0.3.8",
+    "sinon": "1.17.4"
   },
   "browserify-shim": {
     "external": "global:External"

@@ -1,5 +1,5 @@
-var Vector = require('./Vector');
-var _ = require('underscore/underscore');
+import Vector from './Vector';
+import _ from 'underscore/underscore';
 
 function View(world, vector) {
   this.world = world;

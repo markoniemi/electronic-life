@@ -1,4 +1,4 @@
-var Critter = require('./Critter');
+import Critter from './Critter';
 
 function Plant() {
   Critter.call(this, this.randomEnergy());

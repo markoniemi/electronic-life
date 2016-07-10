@@ -1,5 +1,5 @@
-var Critter = require('./Critter');
-var _ = require('underscore/underscore');
+import Critter from './Critter';
+import _ from 'underscore/underscore';
 
 var directionNames = "n ne e se s sw w nw".split(" ");
 

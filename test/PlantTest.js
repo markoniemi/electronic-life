@@ -1,10 +1,10 @@
-var Critter = require('../app/Critter');
-var World = require('../app/World');
-var LifelikeWorld = require('../app/LifelikeWorld');
-var Wall = require('../app/Wall');
-var Plant = require('../app/Plant');
-var Vector = require('../app/Vector');
-var View = require('../app/View');
+import Critter from '../app/Critter';
+import World from '../app/World';
+import LifelikeWorld from '../app/LifelikeWorld';
+import Wall from '../app/Wall';
+import Plant from '../app/Plant';
+import Vector from '../app/Vector';
+import View from '../app/View';
 
 describe('Plant', function() {
   beforeEach(function() {
@@ -23,7 +23,7 @@ describe('Plant', function() {
       this.world = new LifelikeWorld(["*  "], {
         "*": Plant
       });
-      var critter = this.world.grid.get(new Vector(0, 0));
+      let critter = this.world.grid.get(new Vector(0, 0));
       expect(critter.energy).toEqual(1);
       for (var i = 1; i < 14; i += 0.5) {
         this.world.turn();
@@ -52,6 +52,6 @@ describe('Plant', function() {
 function testNextTurn(world, x, y, energy) {
   world.turn();
   //console.log(world.toString());
-  critter = world.grid.get(new Vector(x, y));
+  let critter = world.grid.get(new Vector(x, y));
   expect(critter.energy).toEqual(energy);
 }

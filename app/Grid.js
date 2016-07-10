@@ -1,4 +1,4 @@
-var Vector = require('./Vector');
+import Vector from './Vector';
 
 function Grid(width, height) {
   this.space = new Array(width * height);
