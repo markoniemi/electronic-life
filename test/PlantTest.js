@@ -9,13 +9,13 @@ import View from '../app/View';
 describe('Plant', function() {
   beforeEach(function() {
     // mock randomEnergy for testing
-    sinon.stub(Plant.prototype, 'randomEnergy', function() {
+    sinon.stub(Plant, 'randomEnergy', function() {
       return 1;
     });
   });
 
   afterEach(function() {
-    Plant.prototype.randomEnergy.restore();
+    Plant.randomEnergy.restore();
   });
 
   describe('act', function() {

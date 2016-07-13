@@ -15,14 +15,14 @@ describe('PlantEater', function() {
       return obj[0];
     });
     // mock randomEnergy for testing
-    sinon.stub(Plant.prototype, 'randomEnergy', function() {
+    sinon.stub(Plant, 'randomEnergy', function() {
       return 15;
     });
   });
 
   afterEach(function() {
     _.sample.restore();
-    Plant.prototype.randomEnergy.restore();
+    Plant.randomEnergy.restore();
   });
 
   describe('act', function() {
