@@ -1,3 +1,1 @@
-function Wall() {}
-
-module.exports = Wall;
+export default class Wall{}
