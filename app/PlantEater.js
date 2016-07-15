@@ -6,11 +6,11 @@ export default class PlantEater extends Critter {
     }
 
     act(view) {
-        var space = view.find(" ");
+        let space = view.find(" ");
         if (this.energy > 60 && space) {
             return {type: "reproduce", direction: space};
         }
-        var plant = view.find("*");
+        let plant = view.find("*");
         if (plant) {
             return {type: "eat", direction: plant};
         }

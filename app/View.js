@@ -8,7 +8,7 @@ export default class View {
     }
 
     look(dir) {
-        var target = this.vector.plus(Vector.directions[dir]);
+        let target = this.vector.plus(Vector.directions[dir]);
         if (this.world.grid.isInside(target)) {
             return this.world.charFromElement(this.world.grid.get(target));
         } else {
@@ -17,8 +17,8 @@ export default class View {
     }
 
     findAll(ch) {
-        var found = [];
-        for (var dir in Vector.directions) {
+        let found = [];
+        for (let dir in Vector.directions) {
             if (this.look(dir) === ch) {
                 found.push(dir);
             }
@@ -27,7 +27,7 @@ export default class View {
     }
 
     find(ch) {
-        var found = this.findAll(ch);
+        let found = this.findAll(ch);
         if (found.length === 0) {
             return null;
         }

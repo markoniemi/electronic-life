@@ -1,7 +1,8 @@
-function Critter(energy) {
-  this.energy = energy;
+export default class Critter {
+  constructor(energy) {
+    this.energy = energy;
+  }
 }
-//PlantEater.prototype = Object.create(Critter.prototype);
 
 Critter.prototype.actionTypes = Object.create(null);
 
@@ -11,7 +12,7 @@ Critter.prototype.actionTypes.grow = function() {
 };
 
 Critter.prototype.actionTypes.move = function(world, vector, action) {
-  var dest = world.checkDestination(action, vector);
+  let dest = world.checkDestination(action, vector);
   if (dest === null || this.energy <= 1 || world.grid.get(dest) !== null) {
     return false;
   }
@@ -22,8 +23,8 @@ Critter.prototype.actionTypes.move = function(world, vector, action) {
 };
 
 Critter.prototype.actionTypes.eat = function(world, vector, action) {
-  var dest = world.checkDestination(action, vector);
-  var atDest = dest !== null && world.grid.get(dest);
+  let dest = world.checkDestination(action, vector);
+  let atDest = dest !== null && world.grid.get(dest);
   if (!atDest || atDest.energy === null) {
     return false;
   }
@@ -33,8 +34,8 @@ Critter.prototype.actionTypes.eat = function(world, vector, action) {
 };
 
 Critter.prototype.actionTypes.reproduce = function(world, vector, action) {
-  var baby = world.elementFromChar(world.legend, this.originChar);
-  var dest = world.checkDestination(action, vector);
+  let baby = world.elementFromChar(world.legend, this.originChar);
+  let dest = world.checkDestination(action, vector);
   if (dest === null || this.energy <= 2 * baby.energy || world.grid.get(dest) !== null) {
     return false;
   }
@@ -42,5 +43,3 @@ Critter.prototype.actionTypes.reproduce = function(world, vector, action) {
   world.grid.set(dest, baby);
   return true;
 };
-
-module.exports = Critter;

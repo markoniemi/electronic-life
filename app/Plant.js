@@ -7,7 +7,7 @@ export default class Plant extends Critter {
 
     act(view) {
         if (this.energy > 15) {
-            var space = view.find(" ");
+            let space = view.find(" ");
             if (space) {
                 return {type: "reproduce", direction: space};
             }

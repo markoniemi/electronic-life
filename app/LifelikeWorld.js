@@ -8,8 +8,8 @@ export default class LifelikeWorld extends World {
   }
 
   letAct(critter, vector) {
-    var action = critter.act(new View(this, vector));
-    var handled = action && action.type in critter.actionTypes && critter.actionTypes[action.type].call(critter, this, vector, action);
+    let action = critter.act(new View(this, vector));
+    let handled = action && action.type in critter.actionTypes && critter.actionTypes[action.type].call(critter, this, vector, action);
     if (!handled) {
       critter.energy -= 0.2;
       if (critter.energy <= 0) {

@@ -25,7 +25,7 @@ var world = new World([
      "o": BouncingCritter,
      "s": WallFollower});
 
-var lifelikeWorld = new LifelikeWorld([ 
+let lifelikeWorld = new LifelikeWorld([
     "############################",
     "#####                 ######", 
     "##   ***                **##",
@@ -45,16 +45,16 @@ var lifelikeWorld = new LifelikeWorld([
   "*" : Plant
 });
 
-var gridElement = document.querySelector("#grid");
-var playButton = document.querySelector("#play");
-var fastForwardButton = document.querySelector("#fastForward");
-var pauseButton = document.querySelector("#pause");
-var stepButton = document.querySelector("#step");
-var worldSelect = document.querySelector("#world");
+let gridElement = document.querySelector("#grid");
+let playButton = document.querySelector("#play");
+let fastForwardButton = document.querySelector("#fastForward");
+let pauseButton = document.querySelector("#pause");
+let stepButton = document.querySelector("#step");
+let worldSelect = document.querySelector("#world");
 
-var divGrid = new DivGrid(world);
+let divGrid = new DivGrid(world);
 divGrid.createGrid(gridElement);
-var timerId;
+let timerId;
 
 playButton.addEventListener("click", () => {
   window.clearInterval(timerId);

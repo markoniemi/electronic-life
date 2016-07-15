@@ -18,7 +18,7 @@ module.exports = function(karma) {
 		browserify : {
 			debug : true,
 			transform: [
-				'babelify', 'babelify', 'brfs', 'browserify-shim',
+				'babelify', 'brfs', 'browserify-shim',
 				// workaround for istanbul bug
 				['browserify-istanbul', { instrumenterConfig: {embedSource: true} }]
 			]

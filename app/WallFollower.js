@@ -1,7 +1,7 @@
 import Critter from './Critter';
 
 // TODO move to Vector
-var directionNames = "n ne e se s sw w nw".split(" ");
+let directionNames = "n ne e se s sw w nw".split(" ");
 
 export default class WallFollower extends Critter {
     constructor() {
@@ -10,12 +10,12 @@ export default class WallFollower extends Critter {
     }
 
     act(view) {
-        var space = view.find(" ");
+        let space = view.find(" ");
         if (this.energy > 60 && space) {
             return {type: "reproduce", direction: space};
         }
-        var start = this.direction;
-        var plant = view.find("*");
+        let start = this.direction;
+        let plant = view.find("*");
         if (plant) {
             return {type: "eat", direction: plant};
         }
@@ -34,7 +34,7 @@ export default class WallFollower extends Critter {
 // TODO move to Vector
 // TODO remove direction parameter
     dirPlus(direction, n) {
-        var index = directionNames.indexOf(direction);
+        let index = directionNames.indexOf(direction);
         return directionNames[(index + n + 8) % 8];
     }
 }
